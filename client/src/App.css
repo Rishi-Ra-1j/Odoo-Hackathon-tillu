@@ -1,0 +1,75 @@
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #1b0035 0%, #31116e 40%, #011627 100%);
+  color: #e2e7ef;
+  font-family: 'Orbitron', 'Share Tech Mono', 'monospace', Arial, sans-serif;
+}
+
+.cyber-header {
+  width: 100%;
+  background: rgba(27,0,53,0.8);
+  border-bottom: 2px solid #8f14cc;
+  box-shadow: 0 0 30px #7b2ff2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  margin-bottom: 32px;
+}
+
+.cyber-logo {
+  font-family: 'Orbitron', 'Share Tech Mono', 'monospace', Arial, sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.2em;
+  color: #00ffe7;
+  text-shadow: 0 0 8px #00ffe7;
+  user-select: none;
+  text-decoration: none;
+}
+
+.cyber-logo .pink {
+  color: #c9188f;
+}
+
+.cyber-nav {
+  display: flex;
+  align-items: center;
+}
+
+.cyber-link {
+  margin: 0 10px;
+  padding: 8px 22px;
+  border: 1.5px solid #7b2ff2;
+  border-radius: 8px;
+  color: #e2e7ef;
+  font-weight: bold;
+  font-size: 1rem;
+  background: transparent;
+  text-decoration: none;
+  transition: all 0.16s;
+}
+
+.cyber-link.active,
+.cyber-link:hover {
+  background: #8f14cc;
+  color: #fff;
+  box-shadow: 0 0 14px #8f14cc;
+  border-color: #c9188f;
+}
+
+.cyber-main {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .cyber-header {
+    flex-direction: column;
+    padding: 10px;
+  }
+  .cyber-main {
+    padding: 1rem;
+  }
+}
