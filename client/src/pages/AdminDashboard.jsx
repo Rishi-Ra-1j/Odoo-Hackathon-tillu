@@ -1,24 +1,30 @@
-import { useAuth } from '../context/AuthContext';
+import { useAuth } from "../context/AuthContext";
 
-const AdminDashboard = () => {
+export default function AdminDashboard() {
   const { user } = useAuth();
 
   if (!user || user.role !== "admin")
-    return <div className="container my-5"><div className="alert alert-danger">Access denied</div></div>;
+    return (
+      <div className="container my-5">
+        <div className="alert alert-danger">Access denied. Admins only.</div>
+      </div>
+    );
 
-  // Here, you could list users, add ban/approve/report features, broadcast msg, etc.
   return (
     <div className="container my-5">
       <div className="card shadow p-4">
         <h2 className="text-primary fw-bold mb-3">Admin Dashboard</h2>
-        <ul>
-          <li>Reject spam skill descriptions (feature soon!)</li>
-          <li>Ban users (feature soon!)</li>
-          <li>Send platform-wide messages (feature soon!)</li>
-          <li>Download reports (feature soon!)</li>
+        <ul className="list-group mb-4">
+          <li className="list-group-item">Reject inappropriate or spammy questions/answers (feature soon!)</li>
+          <li className="list-group-item">Ban users who violate platform policies (feature soon!)</li>
+          <li className="list-group-item">Monitor all user activity (feature soon!)</li>
+          <li className="list-group-item">Send platform-wide messages (feature soon!)</li>
+          <li className="list-group-item">Download reports of user activity, feedback logs (feature soon!)</li>
         </ul>
+        <div className="alert alert-info">
+          <strong>Note:</strong> You can expand this dashboard to include user moderation, question review, global announcements, and more!
+        </div>
       </div>
     </div>
   );
-};
-export default AdminDashboard;
+}
